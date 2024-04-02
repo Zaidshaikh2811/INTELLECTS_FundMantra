@@ -38,13 +38,19 @@ export const verifyOTP = createAsyncThunk(
   async ({ otpValues, signupData }, { rejectWithValue }) => {
     try {
         const otp = otpValues.join('')
+        const dob=signupData.age;
+         const dobDate = new Date(dob);
+        const currentDate = new Date();
+        signupData.age = (currentDate.getFullYear() - dobDate.getFullYear()).toString();
+        
         const requestData = {
      otp,
+    dob,
      ...signupData
    };
         console.log(requestData);
-      const response = await axios.post("https://intellects-fundmantra.onrender.com/api/v1/auth/send-otp/signup", {
-      requestData });
+      const response = await axios.post("https://intellects-fundmantra.onrender.com/api/v1/auth/signup", 
+      requestData );
       return response.data; // Assuming the API response contains user data
     } catch (error) {
       return rejectWithValue(error.response.data); // Return error message from API response

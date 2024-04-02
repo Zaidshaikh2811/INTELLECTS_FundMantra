@@ -25,7 +25,7 @@ const [loading, setLoading] = useState(true);
   },);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='loading'>Loading...</div>;
   }
 
   if (error) {
@@ -33,7 +33,7 @@ const [loading, setLoading] = useState(true);
   }
   return (
       <div className="container">
-      <h1>Responsive Table with Striped Rows</h1>
+      <h1>Stock Details</h1>
       <DataTable data={data} />
     </div>
    

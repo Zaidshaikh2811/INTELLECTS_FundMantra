@@ -1,28 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import { sentOTP } from '../Slice/userSlice';
-
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 function SignUp() {
 const dispatch=useDispatch()
   const navigate = useNavigate();
 
 
-  // const handleSubmit = () => {
-  //   localStorage.setItem('signupData', JSON.stringify(formData));
-  //   history.push('/otp');
-  // };
-
+ 
 
  const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
-    phoneNo: '',
+    phoneNumber: '',
     goal: '',
+    age: null,
   });
   // const history = useHistory();
 
@@ -30,6 +26,7 @@ const dispatch=useDispatch()
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  
 
   const handleSubmit = (e) => {
 
@@ -40,6 +37,7 @@ const dispatch=useDispatch()
     navigate('/otp');
    
   };
+
 
 
   return (
@@ -56,14 +54,18 @@ const dispatch=useDispatch()
         </div>
 
  <div className="form-group">
-          <label htmlFor="phoneNo">phoneNo:</label>
-         <input type="text" id="phoneNo" name="phoneNo" value={formData.phoneNo} onChange={handleChange}/>
+          <label htmlFor="phoneNumber">phoneNo:</label>
+         <input type="text" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
         </div>
 
 
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="age">Age:</label>
+          <input type="text" id="age" name="age" value={formData.age} onChange={handleChange} />
         </div>
         <div className="form-group">
           <label htmlFor="confirmPassword">Confirm Password:</label>
