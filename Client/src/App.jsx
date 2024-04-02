@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
+import OtpPage from './Pages/OtpPage';
 function App() {
 
    const [loggedIn, setLoggedIn] = useState(true);
@@ -39,6 +40,7 @@ function App() {
           <>
             <Route path="/" element={<Login handleLogin={handleLogin} />} /> 
             <Route path="/signup" element={<SignUp />} /> 
+            <Route path="/otp" element={<OtpPage />} /> 
           </>
         )}
       </Routes>

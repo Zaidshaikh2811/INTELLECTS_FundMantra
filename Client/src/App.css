@@ -209,3 +209,63 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+
+.otp{
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.otp-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.otp-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.otp-input-container input {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.otp-inputs input{
+  width: 14%;
+  margin: 10px 2.5%;
+}
+
+.resend-button {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.resend-button:hover {
+  background-color: #0056b3;
+}
